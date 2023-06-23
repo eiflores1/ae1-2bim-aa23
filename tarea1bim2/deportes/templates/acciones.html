@@ -1,0 +1,30 @@
+{% extends "principal.html" %}
+{% block contentido %}
+
+  <h3>Lista de Futbol</h3>
+  <p><b>Número de futbol: ({{numero_futbol}})</b> </p>
+  <table id="tabla_datos">
+    <thead>
+    <tr>
+      <th>equipo</th>
+      <th>apodo</th>
+      <th>numero de seguidores</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for acciones in mi_futbol  %}
+      <tr>
+        <td>{{acciones.equipo}}</td>
+        <td>{{acciones.apodo}}</td>
+        <td>{{acciones.seguidores}}</td>
+      </tr>
+      {% endfor %}
+
+    </table>
+  </tbody>
+    <script type="text/javascript">
+      $(document).ready( function () {
+          $('#tabla_datos').DataTable();
+        });
+    </script>
+{% endblock %}
